@@ -33,7 +33,9 @@ public final class MusicGroupImpl implements MusicGroup {
 
     @Override
     public Stream<String> orderedSongNames() {
-        return this.songs.stream().map(s -> s.getSongName()).sorted();
+        return this.songs.stream()
+            .map(s -> s.getSongName())
+            .sorted();
     }
 
     @Override
@@ -44,8 +46,8 @@ public final class MusicGroupImpl implements MusicGroup {
     @Override
     public Stream<String> albumInYear(final int year) {
         return this.albums.entrySet().stream()
-        .filter(f -> f.getValue() == year)
-        .map(f -> f.getKey());
+            .filter(f -> f.getValue() == year)
+            .map(f -> f.getKey());
     }
 
     @Override
